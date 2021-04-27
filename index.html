@@ -8,26 +8,11 @@
     <script src="aframe-look-at-component.min.js"></script>
     <script src="aframe-ar-nft.js"></script>
   </head>
-
-  <body style="margin: 0; overflow: hidden;">
-    <a-scene
-      vr-mode-ui="enabled: false"
-      embedded
-      arjs="sourceType: webcam; debugUIEnabled: false;">
-      <a-text
-        value="This content will always face you."
-        look-at="[gps-camera]"
-        scale="120 120 120"
-        gps-entity-place="latitude: <add-your-latitude>; 
-                         longitude: <add-your-longitude>;"
-      ></a-text>
-      <a-camera gps-camera rotation-reader> 
-       <a-entity
-          position="0 0 0"
-          scale="0.05 0.05 0.05"
-          gltf-model="image_861408150928379247350.gif"
-        ></a-entity>
-      </a-camera>
-    </a-scene>
-  </body>
+  <body style="margin: 0px; overflow: hidden;">
+  <a-scene gps-camera-debug embedded arjs="sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false">
+    <a-camera gps-camera rotation-reader>
+      <a-box color="yellow" gps-entity-place="latitude: <lat>; longitude: <long>" scale="2 2 2" />
+    </a-camera>
+  </a-scene>
+</body>
 </html>
